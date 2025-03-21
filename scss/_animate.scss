@@ -1,0 +1,19 @@
+@keyframes bgmbtn{
+    0%,40%,80%{
+        top: 20px;
+        transform: rotate(0deg);
+    }
+    20%,60%{
+        top: 10px;
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes pageBtn{
+    0%,100%{
+        transform: rotate(-3deg);
+    }
+    50%{
+        transform: rotate(3deg);
+    }
+}
