@@ -44,6 +44,9 @@ $(".logo").on("click", function () {
     $('.page_btns > div').css("pointer-events", "auto")
     $(".logo").css("pointer-events", "none")
 
+    $('.buttons .YT a').attr("href", 'https://www.youtube.com/@SHARKMOLIN')
+    $('.buttons .twitter a').attr("href", 'https://x.com/MolinShark')
+
     $(".screenR,.screenL").css({
         "transform": "translateX(0%)",
         "width": "53%"
@@ -54,6 +57,9 @@ $(".logo").on("click", function () {
     setTimeout(() => {
         $('.page_BG').css(
             "background-image", "url(img/img/BGindex.png)"
+        )
+        $('.BG_mask').css(
+            "background-color", "#ddcdb6"
         )
 
         $('.logo').css({
