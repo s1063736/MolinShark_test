@@ -66,7 +66,7 @@ $(".logo").on("click", function () {
         $('.wood').css(
             "background-image", "url(img/img/header.png)"
         )
-        
+
     }, 900);
 
     setTimeout(() => {
@@ -193,6 +193,11 @@ $('.page_btns > div').on("click", function () {
     }, 910);
 })
 
+
+
+$('.p0_text p').on('click', function () {
+    $('.pop').fadeIn(500)
+})
 
 $('.xx').on('click', function () {
     $('.pop').fadeOut(500)

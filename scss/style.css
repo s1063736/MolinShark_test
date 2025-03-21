@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap");
 @keyframes bgmbtn {
@@ -18,6 +19,14 @@
     transform: rotate(3deg);
   }
 }
+@keyframes triangle {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 body {
   padding: 0;
   margin: 0;
@@ -32,21 +41,21 @@ body header {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 40%;
   z-index: 9;
 }
 body header .screenS {
   position: absolute;
-  top: 6%;
+  top: 20%;
   width: 100%;
-  height: 35%;
+  height: 100%;
   pointer-events: none;
   filter: drop-shadow(0 7px 10px #351F0F);
 }
 body header .screenS div {
   position: absolute;
   top: 0;
-  width: 20%;
+  width: 10%;
   height: 100%;
   background: url(../img/img/header3.png) no-repeat right/contain;
 }
@@ -61,8 +70,8 @@ body header .screen {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
-  background: url(../img/img/header2.png) no-repeat top/contain;
+  height: 70%;
+  background: url(../img/img/header2.png) no-repeat top center/cover;
   pointer-events: none;
 }
 body header .page_btns {
@@ -115,7 +124,7 @@ body header .wood {
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(../img/img/header.png) no-repeat top/contain;
+  background: url(../img/img/header.png) no-repeat top center/cover;
   filter: drop-shadow(0 7px 10px #351F0F);
   pointer-events: none;
   transition: 0.5s;
@@ -198,6 +207,15 @@ body .wrap .p0_text p {
   font-family: "Noto Serif SC", serif;
   color: #FFCA9D;
   letter-spacing: 3px;
+  cursor: pointer;
+}
+body .wrap .p0_text p::after {
+  position: relative;
+  content: "▼";
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  animation: triangle 1s infinite ease;
 }
 body .wrap .p0_text .line {
   width: 100%;
@@ -261,6 +279,7 @@ body .transform {
   height: 100%;
   filter: drop-shadow(0 7px 10px #351F0F);
   z-index: 8;
+  pointer-events: none;
 }
 body .transform div {
   position: absolute;
