@@ -1,13 +1,19 @@
+$xxxl-media: 1600px;
 $xxl-media: 1440px;
-$xl-media: 1366px;
+$xl-media: 1240px;
 $lg-media: 1024px;
-$md-media: 960px;
-$sm-media: 768px;
+$md-media: 960px; 
+$sm-media: 768px;//手機
 $xs-media: 576px;
 $xxs-media: 420px;
 $xxxs-media: 375px;
 $xxxxs-media: 320px;
 
+@mixin xxxl() {
+    @media all and (max-width: $xxxl-media) {
+        @content;
+    }
+}
 
 @mixin xxl() {
     @media all and (max-width: $xxl-media) {

@@ -1,5 +1,6 @@
 let bgm = 1;//有開
 let bgmplayer = $('audio')[0]
+//BGM開關
 $(".BGMbtn").on("click", function () {
     if (bgm == 0) {
         $(".BGMbtn").css(
@@ -22,7 +23,7 @@ $(".BGMbtn").on("click", function () {
     }
 })
 
-
+//背景跟隨游標
 $("html").mousemove(function (e) {
     let windowW = $(window).width(),
         windowH = $(window).height(),
@@ -36,134 +37,214 @@ $("html").mousemove(function (e) {
 
 })
 
+//回首頁
 let page = 0
-$(".logo").on("click", function () {
-    page = 0
-    $(".logo").css("cursor", "auto")
+$("#pindex,.page_index_m").on("click", function () {
+    if (page != 0) {
+        page = 0
+        $(".logo").css("cursor", "auto")
 
-    $('.page_btns > div').css("pointer-events", "auto")
-    $(".logo").css("pointer-events", "none")
+        $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').css("pointer-events", "auto")
 
-    $('.buttons .YT a').attr("href", 'https://www.youtube.com/@SHARKMOLIN')
-    $('.buttons .twitter a').attr("href", 'https://x.com/MolinShark')
+        $('.buttons .YT a').attr("href", 'https://www.youtube.com/@SHARKMOLIN')
+        $('.buttons .twitter a').attr("href", 'https://x.com/MolinShark')
 
-    $(".screenR,.screenL").css({
-        "transform": "translateX(0%)",
-        "width": "53%"
-    })
+        //簾子關
+        if ($(window).width() > 768) {
+            $(".screenR,.screenL").css({
+                "transform": "translateX(0%)",
+                "width": "53%"
+            })
+        } else {
+            $(".screenL").css({
+                "transform": "translateX(0%)",
+                "width": "100%"
+            })
+        }
 
-    $('.buttons .TW,.buttons .DC').fadeOut(500)
+        $('.buttons .TW,.buttons .DC').fadeOut(500)
 
-    setTimeout(() => {
-        $('.page_BG').css(
-            "background-image", "url(img/img/BGindex.png)"
-        )
-        $('.BG_mask').css(
-            "background-color", "#ddcdb6"
-        )
+        setTimeout(() => {
+            $('.page_BG').css(
+                "background-image", "url(img/img/BGindex.png)"
+            )
+            $('.BG_mask').css(
+                "background-color", "#ddcdb6"
+            )
 
-        $('.logo').css({
-            'filter': "drop-shadow(0 7px 10px #351F0F)drop-shadow(0 0px 40px #ffffff)",
-            'top': "-50px",
-            'width': "calc(933px * 1)",
-            'height': "calc(897px * 1)"
-        })
+            //logo位移
+            if ($(window).width() > 768) {
+                $('.logo').css({
+                    'filter': "drop-shadow(0 7px 10px #351F0F)drop-shadow(0 0px 40px #ffffff)",
+                    'width': "calc(50vw * 1)",
+                    'height': "calc(50vw * 0.75)"
+                })
+            } else {
+                $('.logo').css({
+                    'top': "45vh",
+                    'filter': 'drop-shadow(0 7px 10px #351F0F)drop-shadow(0 0px 40px #ffffff8c)',
+                    'transform': 'translateX(-50%)translateY(-100%)scale(1)'
+                })
+            }
 
-        $('.wood').css(
-            "background-image", "url(img/img/header.png)"
-        )
+            if ($(window).width() > 768) {
+                $('.pv,.p0_text').fadeIn(100)
+                $('.wood').css(
+                    "background-image", "url(img/img/header.png)"
+                )
+            } else {
+                $('.p0_text').fadeIn(100)
+            }
 
-    }, 900);
+            $('.lock,.personal,.character').hide()
 
-    setTimeout(() => {
-        $(".screenR").css({
-            "transform": "translateX(50%)",
-            "width": "15%"
-        })
-        $(".screenL").css({
-            "transform": "translateX(-50%)",
-            "width": "15%"
-        })
-    }, 910);
+        }, 900);
+
+        //簾子開
+        setTimeout(() => {
+
+            if ($(window).width() > 768) {
+                $(".screenR").css({
+                    "transform": "translateX(50%)",
+                    "width": "15%"
+                })
+                $(".screenL").css({
+                    "transform": "translateX(-50%)",
+                    "width": "15%"
+                })
+            } else {
+                $(".screenL").css({
+                    "transform": "translateX(-50%)",
+                    "width": "0%"
+                })
+            }
+
+        }, 910);
+
+    }
 
 })
-$(".page_mox").on("click", function () {
+//Mox頁
+$(".page_mox,.page_mox_m").on("click", function () {
     page = 1
-    $(".logo").css("cursor", "pointer")
-    $('.page_btns > div,.logo').css("pointer-events", "auto")
-    $(".page_mox").css("pointer-events", "none")
-    $('.buttons .YT a').attr("href", 'https://www.youtube.com/@mox-vfucker')
-    $('.buttons .twitter a').attr("href", 'https://x.com/MOX_Vfucker')
-    $('.buttons .TW a').attr("href", 'https://www.twitch.tv/mox_vt')
-    $('.buttons .DC a').attr("href", 'https://discord.com/invite/PHaKgfqwq8')
 })
-$(".page_fish").on("click", function () {
+//魚頁
+$(".page_fish,.page_fish_m").on("click", function () {
     page = 2
-    $(".logo").css("cursor", "pointer")
-    $('.page_btns > div,.logo').css("pointer-events", "auto")
-    $(".page_fish").css("pointer-events", "none")
-    $('.buttons .YT a').attr("href", 'https://www.youtube.com/@Dawayluyu')
-    $('.buttons .twitter a').attr("href", 'https://x.com/Dawayluyu')
-    $('.buttons .TW a').attr("href", 'https://www.twitch.tv/dawayluyu')
-    $('.buttons .DC a').attr("href", 'https://discord.com/invite/qgdpqtGwPN ')
 })
-$(".page_ceresa").on("click", function () {
+//莎莎頁
+$(".page_ceresa,.page_ceresa_m").on("click", function () {
     page = 3
-    $(".logo").css("cursor", "pointer")
-    $('.page_btns > div,.logo').css("pointer-events", "auto")
-    $(".page_ceresa").css("pointer-events", "none")
-    $('.buttons .YT a').attr("href", 'https://www.youtube.com/@CeresaClark')
-    $('.buttons .twitter a').attr("href", 'https://x.com/CeresaClark')
-    $('.buttons .TW a').attr("href", 'https://www.twitch.tv/ceresaclark')
-    $('.buttons .DC a').attr("href", 'https://discord.com/invite/W7C7PFzg5M ')
 })
-$(".page_fox").on("click", function () {
+//狐狸頁
+$(".page_fox,.page_fox_m").on("click", function () {
     page = 4
-    $(".logo").css("cursor", "pointer")
-    $('.page_btns > div,.logo').css("pointer-events", "auto")
-    $(".page_fox").css("pointer-events", "none")
-    $('.buttons .YT a').attr("href", 'https://www.youtube.com/@hikamiml')
-    $('.buttons .twitter a').attr("href", 'https://x.com/HikamiML')
-    $('.buttons .TW a').attr("href", 'https://www.twitch.tv/hikamiml')
-    $('.buttons .DC a').attr("href", 'https://discord.com/invite/GTJXAdB7hN')
 })
+//點擊人物頁
+$('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("click", function () {
 
-$('.page_btns > div').on("click", function () {
-    $(".screenR,.screenL").css({
-        "transform": "translateX(0%)",
-        "width": "53%"
-    })
-    $('.logo').css({
-        'filter': "drop-shadow(0 7px 10px #351F0F)drop-shadow(0 7px 20px #351F0F)",
-        'top': "-85px",
-        'width': "calc(933px * 0.4)",
-        'height': "calc(897px * 0.4)"
-    })
-    $('.wood').css(
-        "background-image", "url(img/img/header1-1.png)"
-    )
-    $('.buttons .TW,.buttons .DC').fadeIn(500)
+    //簾子關
+    if ($(window).width() > 768) {
+        $(".screenR,.screenL").css({
+            "transform": "translateX(0%)",
+            "width": "53%"
+        })
+    } else {
+        $(".screenL").css({
+            "transform": "translateX(0%)",
+            "width": "100%"
+        })
+    }
+
+    //按鈕狀態(可/不可按)
+    $(".logo").css("cursor", "pointer")
+    $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m,.logo').css("pointer-events", "auto")
+    $(this).css("pointer-events", "none")
+
+    //logo位移
+    if ($(window).width() > 768) {
+        $('.logo').css({
+            'filter': "drop-shadow(0 7px 10px #351F0F)drop-shadow(0 7px 20px #351F0F)",
+            'width': "calc(50vw * 0.4)",
+            'height': "calc(50vw * 0.75 * 0.4)"
+        })
+        $('.pv').fadeOut(100)
+    } else {
+        $('.logo').css({
+            'filter': "none",
+            'top': '0px',
+            'transform': 'translateX(-50%)translateY(-100%)scale(0.5)'
+        })
+    }
+
+    if ($(window).width() > 768) {
+        $('.wood').css(
+            "background-image", "url(img/img/header1-1.png)"
+        )
+    }
     setTimeout(() => {
+        $('.buttons .TW,.buttons .DC').fadeIn(500)
+        $('.p0_text').fadeOut(100)
+        $(".character").show()
+        $('.personal').css('display', 'flex')
+
         switch (page) {
             case 1:
+                $('.lock').hide()
                 $('.page_BG').css(
                     "background-image", "url(img/img/BGmox.png)"
                 )
                 $('.BG_mask').css(
                     "background-color", "#ddcdb6"
                 )
+                $('.role').css({
+                    'width': 'calc(' + $('.role').height() + 'px * 2.46)',
+                    "background-image": "url(img/img/name_Mox.png)"
+                })
+                $('.character').css(
+                    "background-image", "url(img/img/mox.png)"
+                )
+                $('.slogan').html(`「誒？這裡是哪裡？<br/>不會吧……我、我變成兔子王子了？！」`)
+                $('.personal_info').html(`在一個叫做路納多利姆的大陸上，裏頭充斥著魔幻與奇幻的世界，在同一個世界卻有著人神獸不同種族的存在，而在另外一個位面上，也有著蘊含豐富精神力的靈界&nbsp;`)
+
+                $('.buttons .YT a').attr("href", 'https://www.youtube.com/@mox-vfucker')
+                $('.buttons .twitter a').attr("href", 'https://x.com/MOX_Vfucker')
+                $('.buttons .TW a').attr("href", 'https://www.twitch.tv/mox_vt')
+                $('.buttons .DC a').attr("href", 'https://discord.com/invite/PHaKgfqwq8')
 
                 break;
             case 2:
+                $('.lock').show()
                 $('.page_BG').css(
                     "background-image", "url(img/img/BGfish.jpg)"
                 )
                 $('.BG_mask').css(
                     "background-color", "#cce1f7"
                 )
+                $('.role').css({
+                    'width': 'calc(' + $('.role').height() + 'px * 2.46)',
+                    "background-image": "url(img/img/name_who.png)"
+                })
+                //亮名
+                // $('.role').css({
+                //     "background-image": "url(img/img/name_fish.png)",
+                //     'width': 'calc(' + $('.role').height() + 'px * 3.61)'
+                // })
+
+                $('.character').css(
+                    "background-image", "url(img/img/fishBlack.png)"
+                )
+                $('.slogan').html(`「■■■■■■■■■■<br/>■■■■■■■■■■■■■■」`)
+                $('.personal_info').html(`■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■&nbsp;`)
+
+                $('.buttons .YT a').attr("href", 'https://www.youtube.com/@Dawayluyu')
+                $('.buttons .twitter a').attr("href", 'https://x.com/Dawayluyu')
+                $('.buttons .TW a').attr("href", 'https://www.twitch.tv/dawayluyu')
+                $('.buttons .DC a').attr("href", 'https://discord.com/invite/qgdpqtGwPN ')
 
                 break;
             case 3:
+                $('.lock').show()
                 $('.page_BG').css(
                     "background-image", "url(img/img/BGceresa.jpg)"
                 )
@@ -171,8 +252,30 @@ $('.page_btns > div').on("click", function () {
                     "background-color", "#ddb6b6"
                 )
 
+                $('.role').css({
+                    'width': 'calc(' + $('.role').height() + 'px * 2.46)',
+                    "background-image": "url(img/img/name_who.png)"
+                })
+                //亮名
+                // $('.role').css({
+                //     "background-image": "url(img/img/name_ceresa.png)",
+                //     'width': 'calc(' + $('.role').height() + 'px * 3)'
+                // })
+
+                $('.character').css(
+                    "background-image", "url(img/img/fishBlack.png)"
+                )
+                $('.slogan').html(`「■■■■■■■■■■<br/>■■■■■■■■■■■■■■」`)
+                $('.personal_info').html(`■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■&nbsp;`)
+
+                $('.buttons .YT a').attr("href", 'https://www.youtube.com/@CeresaClark')
+                $('.buttons .twitter a').attr("href", 'https://x.com/CeresaClark')
+                $('.buttons .TW a').attr("href", 'https://www.twitch.tv/ceresaclark')
+                $('.buttons .DC a').attr("href", 'https://discord.com/invite/W7C7PFzg5M')
+
                 break;
             case 4:
+                $('.lock').show()
                 $('.page_BG').css(
                     "background-image", "url(img/img/BGfox.jpg)"
                 )
@@ -180,34 +283,100 @@ $('.page_btns > div').on("click", function () {
                     "background-color", "#fff7fb"
                 )
 
+                $('.role').css({
+                    'width': 'calc(' + $('.role').height() + 'px * 2.46)',
+                    "background-image": "url(img/img/name_who.png)"
+                })
+
+                //亮名
+                // $('.role').css({
+                //     'width': 'calc(' + $('.name').height() + 'px * 3.15)',
+                //     "background-image": "url(img/img/name_fox.png)",
+                // })
+
+                $('.character').css(
+                    "background-image", "url(img/img/fishBlack.png)"
+                )
+                $('.slogan').html(`「■■■■■■■■■■<br/>■■■■■■■■■■■■■■」`)
+                $('.personal_info').html(`■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■&nbsp;`)
+
+                $('.buttons .YT a').attr("href", 'https://www.youtube.com/@hikamiml')
+                $('.buttons .twitter a').attr("href", 'https://x.com/HikamiML')
+                $('.buttons .TW a').attr("href", 'https://www.twitch.tv/hikamiml')
+                $('.buttons .DC a').attr("href", 'https://discord.com/invite/GTJXAdB7hN')
+
                 break;
 
             default:
                 break;
         }
     }, 900);
+
+    //簾子開
     setTimeout(() => {
-        $(".screenR").css({
-            "transform": "translateX(50%)",
-            "width": "15%"
-        })
-        $(".screenL").css({
-            "transform": "translateX(-50%)",
-            "width": "15%"
-        })
+
+        if ($(window).width() > 768) {
+            $(".screenR").css({
+                "transform": "translateX(50%)",
+                "width": "15%"
+            })
+            $(".screenL").css({
+                "transform": "translateX(-50%)",
+                "width": "15%"
+            })
+        } else {
+            $(".screenL").css({
+                "transform": "translateX(-50%)",
+                "width": "0%"
+            })
+        }
 
     }, 910);
 })
 
 
-
+//世界觀內文
 $('.p0_text p').on('click', function () {
+    $('.pop_title').html("世界觀")
+    $('.pop_text').html(`而在這片大陸上，有著三種外貌能力截然不同的三大種族：因為過強的精神力和魔法力所以總是待在靈界的神靈族；有著先進科技發展崇尚科學研究的人族；還有嚮往自然居住在自然環境的異人族，後兩者在世界上的接觸引發了各種各樣的事件。<br><br>
+    在百年之前，為了各自資源的爭奪，人族以及異人族之間發生了一場直到現在回想起來都令人毛骨悚然的沃爾戰爭，雖然在當時人族已經有相當的科技發展以及軍事武力，但是在沒有精神力的支持之下，異人族靠著強大的魔法力運用成功擊退了人族，在戰爭途中，人族由於精神力的缺乏對於魔法力的抵抗相當薄弱，此為人族節節敗退的主因，直到戰爭的後期人族以犧牲了近半數族人的性命作為媒介喚出了一名喜好戰爭的神靈族，成功將異人族逼退，並在大陸的中央刻下了一道至今依然被神靈族的魔法力所壟罩的「肯伊恩的裂隙」。<br><br>
+    為了不再使相同的憾事發生，當時人族的國王以及異人族的族長共同簽下了"佛艾威爾匹斯"條約，而在簽署了條約之後人族退回至蘊含礦脈的谷地生存，異人族則是定居於含有森林以及海洋資源的平原大陸，雖說當時的戰役在雙方種族的心中都留下了一道深刻的傷口，但在經過了時間的流逝，兩族人也漸漸的嘗試與彼此互動，甚至是通商抑或是技術力之間的交流。<br><br>
+    在戰後過了將近半載餘年，如今的社會上已經沒有當初相互排斥的思想了，雖然居住的地區不同，也還是可以藉由貿易或是其他的溝通管道來進行連絡，而近期人族研發出由科技驅動的魔法力"奧術"有時也會與異人族內的信仰魔法來相互切磋較勁，而除了人族異人族兩族的發展，隨著科技的進步而來的也有著各式各樣的信仰，而其中也不乏有些天生即具有強大精神力的人類，藉由自身的精神力成功地與靈界的神靈族接觸，更有甚者能夠與神靈族簽訂契約，並以此來借用神靈族的權能，使得"信仰"這份力量也逐漸開始的不容小覷。<br><br>
+    那麼來自異世界的穿越者阿，你們的身上有帶著怎麼樣的色彩，又或是會給這個世界帶來什麼樣的故事呢？`)
+    $('.pop').fadeIn(500)
+})
+//人物內文
+$('.personal_info').on('click', function () {
+    $('.pop_title').html("關於人物")
+
+    switch (page) {
+        case 1:
+            $('.pop_text').html(`沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案<br><br>`)
+            break;
+
+        case 2:
+            $('.pop_text').html(`■`)
+            break;
+
+        case 3:
+            $('.pop_text').html(`3`)
+            break;
+
+        case 4:
+            $('.pop_text').html(`4`)
+            break;
+
+        default:
+            break;
+    }
+
     $('.pop').fadeIn(500)
 })
 
 $('.xx').on('click', function () {
     $('.pop').fadeOut(500)
 })
+//彈窗動態
 $('.pop').on('click', function () {
     setTimeout(() => {
         $('.pop_frame').animate({
