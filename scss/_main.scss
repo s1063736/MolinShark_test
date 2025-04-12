@@ -24,7 +24,7 @@ body{
                 top: 6.8vw;
                 width: 20vw;
                 height: calc(20vw * 0.67);
-                background: url(../img/img/header3.png)no-repeat right / contain ;
+                background: url(../img/img/header3.webp)no-repeat right / contain ;
             }
 
             & div:first-child{
@@ -42,12 +42,12 @@ body{
             top: 0;
             width: 100vw;
             height: 14vw;
-            background: url(../img/img/header2.png)no-repeat top center / cover ;
+            background: url(../img/img/header2.webp)no-repeat top center / cover ;
             pointer-events: none;
 
             @include sm(){
                 height: 21.4vw;
-                background-image: url(../img/img/header2M.png);
+                background-image: url(../img/img/header2M.webp);
             }
         }
 
@@ -61,7 +61,7 @@ body{
 
             & div{
                 position: absolute;
-                background: url(../img/img/pageM.png)no-repeat center / contain;
+                background: url(../img/img/pageM.webp)no-repeat center / contain;
                 transition: 1s;
                 animation: pageBtn 5s infinite ease;
 
@@ -112,7 +112,7 @@ body{
                 left: 325px;
                 width: 54px;
                 height: 344px;
-                background-image: url(../img/img/pageF.png);
+                background-image: url(../img/img/pageF.webp);
                 transform-origin: 35% 0%;
 
                 @include xxxl(){
@@ -150,7 +150,7 @@ body{
                 right: 300px;
                 width: 74px;
                 height: 346px;
-                background-image: url(../img/img/pageC.png);
+                background-image: url(../img/img/pageC.webp);
                 transform-origin: 50% 0%;
 
                 @include xxxl(){
@@ -189,7 +189,7 @@ body{
                 right: 135px;
                 width: 89px;
                 height: 364px;
-                background-image: url(../img/img/pageH.png);
+                background-image: url(../img/img/pageH.webp);
                 transform-origin: 66% 0%;
 
                 @include xxxl(){
@@ -228,31 +228,44 @@ body{
             top: 0;
             width: 100vw;
             height: 18vw;
-            background: url(../img/img/header.png)no-repeat top center / cover ;
+            background: url(../img/img/header.webp)no-repeat top center / cover ;
             filter: drop-shadow(0 7px 10px #351F0F);
             pointer-events: none;
             transition: 0.5s;
 
             @include sm(){
                 height: 28.21vw;
-                background-image: url(../img/img/woodM.png);
+                background-image: url(../img/img/woodM.webp);
                 filter: none;
             }
         }
 
         .BGMbtn{
             position: absolute;
-            right: 20px;
             top: 20px;
+            left: 20px;
             width: 40px;
             height: 40px;
-            background: url(../img/img/bgmOff.png)no-repeat center / contain;
+            background: url(../img/img/bgmOff.webp)no-repeat center / contain;
             cursor: pointer;
             animation: bgmbtn 1s infinite;
+            z-index: 9;
 
             @include xl(){
                 width: 30px;
                 height: 30px;
+            }
+
+            @include xs(){
+                top: 15px;
+                left: 15px;
+                width: 25px;
+                height: 25px;
+            }
+
+            @include xs(){
+                top: 10px;
+                left: 10px;
             }
         }
 
@@ -277,10 +290,10 @@ body{
             .logoImg{
                 width: 100%;
                 height: 100%;
-                background: url(../img/img/logo.png)no-repeat top center / contain;
+                background: url(../img/img/logo.webp)no-repeat top center / contain;
 
                 @include sm(){
-                    background: url(../img/img/logoM.png)no-repeat bottom center / cover;
+                    background: url(../img/img/logoM.webp)no-repeat bottom center / cover;
                 }
             }
 
@@ -290,7 +303,7 @@ body{
                 right: 10%;
                 width: 2.6vw;
                 height: 2.6vw;
-                background: url(../img/img/play.png)no-repeat center / contain;
+                background: url(../img/img/play.webp)no-repeat center / contain;
                 filter: drop-shadow(0 7px 10px #351F0F);
                 cursor: pointer;
                 transition: 0.3s;
@@ -337,7 +350,7 @@ body{
             transform: translateX(-50%)translateY(-50%);
             width: calc(100vw + 20px);
             height: calc(100vh + 20px);
-            background: url(../img/img/BGindex.png)no-repeat center / cover;
+            background: url(../img/img/BGindex.webp)no-repeat center / cover;
 
             & div{
                 position: absolute;
@@ -365,17 +378,24 @@ body{
             left: 10vw;
             width: 40vw;
             height: 80%;
-            background: url(../img/img/mox.png)no-repeat top right / cover;
+            background: url(../img/img/mox.webp)no-repeat top right / cover;
             filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
             display: none;
+
+            @include sm(){
+                width: 120vw;
+                height: 90%;
+                left: unset;
+                right: 20px;
+            }
         }
 
         .bottomshadow{
             position: absolute;
             width: 100%;
-            height: 20%;
+            height: 40%;
             bottom: 0px;
-            background: linear-gradient(to top , rgba(0, 0, 0, 0.5) 40%,rgba(0, 0, 0, 0));
+            background: linear-gradient(to top , rgba(0, 0, 0, 0.8) 40%,rgba(0, 0, 0, 0));
         }
 
         .p0_text{
@@ -431,7 +451,7 @@ body{
             .line{
                 width: 100%;
                 height: 20%;
-                background: url(../img/img/line.png)no-repeat center / contain;
+                background: url(../img/img/line.webp)no-repeat center / contain;
 
                 @include sm(){
                     width: 60%;
@@ -441,35 +461,78 @@ body{
 
         .personal{
             position: absolute;
-            right: 200px;
-            top: 50%;
+            right: 10.4vw;
+            bottom: 7vh;
             display: none;
             flex-direction: column;
             align-items: end;
 
+            @include sm(){
+                right: 50%;
+                transform: translateX(50%);
+                bottom: 25vw;
+                width: 80vw;
+                align-items: flex-start;
+            }
+
+            @include xs(){
+                width: 90vw;
+            }
+
             .name{
                 display: flex;
-                height: 15vh;
+                height: 6vw;
                 align-items: end;
                 filter: drop-shadow(0 7px 10px #351F0F);
+
+                @include sm(){
+                    flex-direction: row-reverse;
+                    height: 10vw;
+                }
+                
+                @include xs(){
+                    height: 15vw;
+                }
     
                 .sound{
                     width: 50px;
                     height: 50px;
                     margin-right: 10px;
                     margin-bottom: 10px;
-                    background: url(../img/img/sound.png)no-repeat center / contain;
+                    background: url(../img/img/sound.webp)no-repeat center / contain;
                     cursor: pointer;
                     transition: 0.3s;
+
+                    @include xxxl(){
+                        width: 45px;
+                        height: 45px;
+                    }
+                    
+                    @include xxl(){
+                        width: 40px;
+                        height: 40px;
+                    }
+                    
+                    @include xl(){
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    @include sm(){
+                        width: 6vw;
+                        height: 6vw;
+                        margin-right: 0px;
+                        margin-left: 10px;
+                    }
     
                     &:hover{
                         transform: scale(1.2);
                     }
                 }
                 .role{
-                    width: calc(15vh * 2.46);
+                    width: calc(6vw * 2.46);
                     height: 100%;
-                    background: url(../img/img/name_Mox.png)no-repeat center / contain;
+                    background: url(../img/img/name_Mox.webp)no-repeat center / contain;
                 }
             }
 
@@ -477,12 +540,37 @@ body{
                 padding: 0;
                 margin: 0;
                 text-align: right;
-                margin-right: 10px;
                 font-size: 35px;
                 font-style: italic;
                 font-weight: 900;
                 font-family: "Noto Serif SC", serif;
                 color: #FFCA9D;
+
+                @include xxxl(){
+                    font-size: 33px;
+                }
+
+                @include xl(){
+                    font-size: 28px;
+                }
+
+                @include sm(){
+                    font-size: 25px;
+                    text-align: left;
+                }
+
+                @include xs(){
+                    font-size: 21px;
+                }
+
+                @include xxs(){
+                    font-size: 19px;
+                }
+
+                @include xxxs(){
+                    font-size: 18px;
+                }
+
             }
 
             .personal_info{
@@ -496,6 +584,23 @@ body{
                 color: #FFCA9D;
                 cursor: pointer;
                 word-wrap: break-word;
+                
+                @include xxxl(){
+                    font-size: 18px;
+                }
+
+                @include xl(){
+                    font-size: 15px;
+                }
+
+                @include sm(){
+                    width: 100%;
+                    text-align: left;
+                }
+
+                @include xxs(){
+                    font-size: 13px;
+                }
 
                 &::after{
                     position: relative;
@@ -512,22 +617,16 @@ body{
             position: absolute;
             bottom: 23vh;
             left: 200px;
-            height: 100px;
             display: flex;
             justify-content: center;
             filter: drop-shadow(0 7px 10px #351F0F);
 
             @include xxxl(){
-                height: 80px;
                 left: 150px;
             }
 
             @include xxl(){
                 left: 120px;
-            }
-
-            @include xl(){
-                height: 70px;
             }
 
             @include sm(){
@@ -538,17 +637,24 @@ body{
     
             div{
                 width: 100px;
-                height: 100%;
+                height: 100px;
                 margin: 0 2px;
                 cursor: pointer;
                 transition: 0.2s;
                 
                 @include xxxl(){
                     width: 80px;
+                    height: 80px;
                 }
 
                 @include xl(){
                     width: 70px;
+                    height: 70px;
+                }
+
+                @include sm(){
+                    width: 60px;
+                    height: 60px;
                 }
     
                 & a{
@@ -571,36 +677,36 @@ body{
             }
     
             .YT{
-                background: url(../img/img/YT.png)no-repeat center / contain;
+                background: url(../img/img/YT.webp)no-repeat center / contain;
     
                 &:hover{
-                    background-image: url(../img/img/YT_h.png);
+                    background-image: url(../img/img/YT_h.webp);
                 }
             }
     
             .twitter{
-                background: url(../img/img/X.png)no-repeat center / contain;
+                background: url(../img/img/X.webp)no-repeat center / contain;
     
                 &:hover{
-                    background-image: url(../img/img/X_h.png);
+                    background-image: url(../img/img/X_h.webp);
                 }
             }
     
             .TW{
-                background: url(../img/img/TW.png)no-repeat center / contain;
+                background: url(../img/img/TW.webp)no-repeat center / contain;
                 display: none;
     
                 &:hover{
-                    background-image: url(../img/img/TW_h.png);
+                    background-image: url(../img/img/TW_h.webp);
                 }
             }
     
             .DC{
-                background: url(../img/img/DC.png)no-repeat center / contain;
+                background: url(../img/img/DC.webp)no-repeat center / contain;
                 display: none;
     
                 &:hover{
-                    background-image: url(../img/img/DC_h.png);
+                    background-image: url(../img/img/DC_h.webp);
                 }
             }
         }
@@ -620,9 +726,21 @@ body{
                 top: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
-                width: 282px;
-                height: 374px;
-                background: url(../img/img/lock.png)no-repeat center / contain;
+                width: 10vw;
+                height: 100%;
+                background: url(../img/img/lock.webp)no-repeat center / contain;
+
+                @include xxxl(){
+                    width: 13vw;
+                }
+
+                @include md(){
+                    width: 18vw;
+                }
+
+                @include sm(){
+                    width: 30vw;
+                }
             }
         }
 
@@ -631,7 +749,7 @@ body{
             bottom: 0;
             width: 100%;
             height: 25vw;
-            background: url(../img/img/menuM.png)no-repeat center bottom / contain;
+            background: url(../img/img/menuM.webp)no-repeat center bottom / contain;
             display: none;
             justify-content: space-evenly;
             align-items: end;
@@ -645,29 +763,29 @@ body{
                 margin-bottom: 6%;
                 width: 15%;
                 height: 15vw;
-                background: url(../img/img/pM_M.png)no-repeat center / contain;
+                background: url(../img/img/pM_M.webp)no-repeat center / contain;
                 filter: drop-shadow(0 7px 10px #351F0F);
             }
 
             .page_fish_m{
                 margin-bottom: 3%;
-                background-image: url(../img/img/pF_m.png);
+                background-image: url(../img/img/pF_m.webp);
             }
 
             .page_index_m{
                 width: 28%;
                 margin-bottom: 0px;
-                background: url(../img/img/index_m.png)no-repeat center top / cover;
+                background: url(../img/img/index_m.webp)no-repeat center top / cover;
             }
 
             .page_ceresa_m{
                 margin-bottom: 3%;
-                background-image: url(../img/img/pC_m.png);
+                background-image: url(../img/img/pC_m.webp);
             }
 
             .page_fox_m{
                 margin-bottom: 6%;
-                background-image: url(../img/img/pFox_m.png);
+                background-image: url(../img/img/pFox_m.webp);
             }
 
         }
@@ -687,7 +805,7 @@ body{
             position: absolute;
             width: 15%;
             height: 100%;
-            background: url(../img/img/screen.png)no-repeat left / cover;
+            background: url(../img/img/screen.webp)no-repeat left / cover;
             transition: 0.8s;
         }
 
@@ -771,7 +889,7 @@ body{
                     position: absolute;
                     width: 70px;
                     height: 70px;
-                    background: url(../img/img/pop_corner.png)no-repeat center / contain;
+                    background: url(../img/img/pop_corner.webp)no-repeat center / contain;
 
                     @include xl(){
                         width: 60px;
@@ -825,7 +943,7 @@ body{
                 margin: 20px 0;
                 width: 100%;
                 min-height: 12px;
-                background: url(../img/img/popLine.png)no-repeat center / contain;
+                background: url(../img/img/popLine.webp)no-repeat center / contain;
             }
 
             .pop_text{

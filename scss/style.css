@@ -3,12 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap");
 @keyframes bgmbtn {
   0%, 40%, 80% {
-    top: 20px;
-    transform: rotate(0deg);
+    transform: rotate(0deg) translateY(0);
   }
   20%, 60% {
-    top: 10px;
-    transform: rotate(-15deg);
+    transform: rotate(-15deg) translateY(-10px);
   }
 }
 @keyframes pageBtn {
@@ -56,7 +54,7 @@ body header .screenS div {
   top: 6.8vw;
   width: 20vw;
   height: 13.4vw;
-  background: url(../img/img/header3.png) no-repeat right/contain;
+  background: url(../img/img/header3.webp) no-repeat right/contain;
 }
 body header .screenS div:first-child {
   right: 0;
@@ -70,13 +68,13 @@ body header .screen {
   top: 0;
   width: 100vw;
   height: 14vw;
-  background: url(../img/img/header2.png) no-repeat top center/cover;
+  background: url(../img/img/header2.webp) no-repeat top center/cover;
   pointer-events: none;
 }
 @media all and (max-width: 768px) {
   body header .screen {
     height: 21.4vw;
-    background-image: url(../img/img/header2M.png);
+    background-image: url(../img/img/header2M.webp);
   }
 }
 body header .page_btns {
@@ -90,7 +88,7 @@ body header .page_btns {
 }
 body header .page_btns div {
   position: absolute;
-  background: url(../img/img/pageM.png) no-repeat center/contain;
+  background: url(../img/img/pageM.webp) no-repeat center/contain;
   transition: 1s;
   animation: pageBtn 5s infinite ease;
 }
@@ -144,7 +142,7 @@ body header .page_btns .page_fish {
   left: 325px;
   width: 54px;
   height: 344px;
-  background-image: url(../img/img/pageF.png);
+  background-image: url(../img/img/pageF.webp);
   transform-origin: 35% 0%;
 }
 @media all and (max-width: 1600px) {
@@ -187,7 +185,7 @@ body header .page_btns .page_ceresa {
   right: 300px;
   width: 74px;
   height: 346px;
-  background-image: url(../img/img/pageC.png);
+  background-image: url(../img/img/pageC.webp);
   transform-origin: 50% 0%;
 }
 @media all and (max-width: 1600px) {
@@ -230,7 +228,7 @@ body header .page_btns .page_fox {
   right: 135px;
   width: 89px;
   height: 364px;
-  background-image: url(../img/img/pageH.png);
+  background-image: url(../img/img/pageH.webp);
   transform-origin: 66% 0%;
 }
 @media all and (max-width: 1600px) {
@@ -272,7 +270,7 @@ body header .wood {
   top: 0;
   width: 100vw;
   height: 18vw;
-  background: url(../img/img/header.png) no-repeat top center/cover;
+  background: url(../img/img/header.webp) no-repeat top center/cover;
   filter: drop-shadow(0 7px 10px #351F0F);
   pointer-events: none;
   transition: 0.5s;
@@ -280,24 +278,39 @@ body header .wood {
 @media all and (max-width: 768px) {
   body header .wood {
     height: 28.21vw;
-    background-image: url(../img/img/woodM.png);
+    background-image: url(../img/img/woodM.webp);
     filter: none;
   }
 }
 body header .BGMbtn {
   position: absolute;
-  right: 20px;
   top: 20px;
+  left: 20px;
   width: 40px;
   height: 40px;
-  background: url(../img/img/bgmOff.png) no-repeat center/contain;
+  background: url(../img/img/bgmOff.webp) no-repeat center/contain;
   cursor: pointer;
   animation: bgmbtn 1s infinite;
+  z-index: 9;
 }
 @media all and (max-width: 1240px) {
   body header .BGMbtn {
     width: 30px;
     height: 30px;
+  }
+}
+@media all and (max-width: 576px) {
+  body header .BGMbtn {
+    top: 15px;
+    left: 15px;
+    width: 25px;
+    height: 25px;
+  }
+}
+@media all and (max-width: 576px) {
+  body header .BGMbtn {
+    top: 10px;
+    left: 10px;
   }
 }
 body header .logo {
@@ -322,11 +335,11 @@ body header .logo {
 body header .logo .logoImg {
   width: 100%;
   height: 100%;
-  background: url(../img/img/logo.png) no-repeat top center/contain;
+  background: url(../img/img/logo.webp) no-repeat top center/contain;
 }
 @media all and (max-width: 768px) {
   body header .logo .logoImg {
-    background: url(../img/img/logoM.png) no-repeat bottom center/cover;
+    background: url(../img/img/logoM.webp) no-repeat bottom center/cover;
   }
 }
 body header .logo .pv {
@@ -335,7 +348,7 @@ body header .logo .pv {
   right: 10%;
   width: 2.6vw;
   height: 2.6vw;
-  background: url(../img/img/play.png) no-repeat center/contain;
+  background: url(../img/img/play.webp) no-repeat center/contain;
   filter: drop-shadow(0 7px 10px #351F0F);
   cursor: pointer;
   transition: 0.3s;
@@ -379,7 +392,7 @@ body .wrap .page_BG {
   transform: translateX(-50%) translateY(-50%);
   width: calc(100vw + 20px);
   height: calc(100vh + 20px);
-  background: url(../img/img/BGindex.png) no-repeat center/cover;
+  background: url(../img/img/BGindex.webp) no-repeat center/cover;
 }
 body .wrap .page_BG div {
   position: absolute;
@@ -402,16 +415,24 @@ body .wrap .character {
   left: 10vw;
   width: 40vw;
   height: 80%;
-  background: url(../img/img/mox.png) no-repeat top right/cover;
+  background: url(../img/img/mox.webp) no-repeat top right/cover;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
   display: none;
+}
+@media all and (max-width: 768px) {
+  body .wrap .character {
+    width: 120vw;
+    height: 90%;
+    left: unset;
+    right: 20px;
+  }
 }
 body .wrap .bottomshadow {
   position: absolute;
   width: 100%;
-  height: 20%;
+  height: 40%;
   bottom: 0px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0));
 }
 body .wrap .p0_text {
   position: absolute;
@@ -469,7 +490,7 @@ body .wrap .p0_text p::after {
 body .wrap .p0_text .line {
   width: 100%;
   height: 20%;
-  background: url(../img/img/line.png) no-repeat center/contain;
+  background: url(../img/img/line.webp) no-repeat center/contain;
 }
 @media all and (max-width: 768px) {
   body .wrap .p0_text .line {
@@ -478,45 +499,126 @@ body .wrap .p0_text .line {
 }
 body .wrap .personal {
   position: absolute;
-  right: 200px;
-  top: 50%;
+  right: 10.4vw;
+  bottom: 7vh;
   display: none;
   flex-direction: column;
   align-items: end;
 }
+@media all and (max-width: 768px) {
+  body .wrap .personal {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 25vw;
+    width: 80vw;
+    align-items: flex-start;
+  }
+}
+@media all and (max-width: 576px) {
+  body .wrap .personal {
+    width: 90vw;
+  }
+}
 body .wrap .personal .name {
   display: flex;
-  height: 15vh;
+  height: 6vw;
   align-items: end;
   filter: drop-shadow(0 7px 10px #351F0F);
+}
+@media all and (max-width: 768px) {
+  body .wrap .personal .name {
+    flex-direction: row-reverse;
+    height: 10vw;
+  }
+}
+@media all and (max-width: 576px) {
+  body .wrap .personal .name {
+    height: 15vw;
+  }
 }
 body .wrap .personal .name .sound {
   width: 50px;
   height: 50px;
   margin-right: 10px;
   margin-bottom: 10px;
-  background: url(../img/img/sound.png) no-repeat center/contain;
+  background: url(../img/img/sound.webp) no-repeat center/contain;
   cursor: pointer;
   transition: 0.3s;
+}
+@media all and (max-width: 1600px) {
+  body .wrap .personal .name .sound {
+    width: 45px;
+    height: 45px;
+  }
+}
+@media all and (max-width: 1440px) {
+  body .wrap .personal .name .sound {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media all and (max-width: 1240px) {
+  body .wrap .personal .name .sound {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media all and (max-width: 768px) {
+  body .wrap .personal .name .sound {
+    width: 6vw;
+    height: 6vw;
+    margin-right: 0px;
+    margin-left: 10px;
+  }
 }
 body .wrap .personal .name .sound:hover {
   transform: scale(1.2);
 }
 body .wrap .personal .name .role {
-  width: 36.9vh;
+  width: 14.76vw;
   height: 100%;
-  background: url(../img/img/name_Mox.png) no-repeat center/contain;
+  background: url(../img/img/name_Mox.webp) no-repeat center/contain;
 }
 body .wrap .personal .slogan {
   padding: 0;
   margin: 0;
   text-align: right;
-  margin-right: 10px;
   font-size: 35px;
   font-style: italic;
   font-weight: 900;
   font-family: "Noto Serif SC", serif;
   color: #FFCA9D;
+}
+@media all and (max-width: 1600px) {
+  body .wrap .personal .slogan {
+    font-size: 33px;
+  }
+}
+@media all and (max-width: 1240px) {
+  body .wrap .personal .slogan {
+    font-size: 28px;
+  }
+}
+@media all and (max-width: 768px) {
+  body .wrap .personal .slogan {
+    font-size: 25px;
+    text-align: left;
+  }
+}
+@media all and (max-width: 576px) {
+  body .wrap .personal .slogan {
+    font-size: 21px;
+  }
+}
+@media all and (max-width: 420px) {
+  body .wrap .personal .slogan {
+    font-size: 19px;
+  }
+}
+@media all and (max-width: 375px) {
+  body .wrap .personal .slogan {
+    font-size: 18px;
+  }
 }
 body .wrap .personal .personal_info {
   padding: 0;
@@ -530,6 +632,27 @@ body .wrap .personal .personal_info {
   cursor: pointer;
   word-wrap: break-word;
 }
+@media all and (max-width: 1600px) {
+  body .wrap .personal .personal_info {
+    font-size: 18px;
+  }
+}
+@media all and (max-width: 1240px) {
+  body .wrap .personal .personal_info {
+    font-size: 15px;
+  }
+}
+@media all and (max-width: 768px) {
+  body .wrap .personal .personal_info {
+    width: 100%;
+    text-align: left;
+  }
+}
+@media all and (max-width: 420px) {
+  body .wrap .personal .personal_info {
+    font-size: 13px;
+  }
+}
 body .wrap .personal .personal_info::after {
   position: relative;
   content: "▼";
@@ -542,25 +665,18 @@ body .wrap .buttons {
   position: absolute;
   bottom: 23vh;
   left: 200px;
-  height: 100px;
   display: flex;
   justify-content: center;
   filter: drop-shadow(0 7px 10px #351F0F);
 }
 @media all and (max-width: 1600px) {
   body .wrap .buttons {
-    height: 80px;
     left: 150px;
   }
 }
 @media all and (max-width: 1440px) {
   body .wrap .buttons {
     left: 120px;
-  }
-}
-@media all and (max-width: 1240px) {
-  body .wrap .buttons {
-    height: 70px;
   }
 }
 @media all and (max-width: 768px) {
@@ -572,7 +688,7 @@ body .wrap .buttons {
 }
 body .wrap .buttons div {
   width: 100px;
-  height: 100%;
+  height: 100px;
   margin: 0 2px;
   cursor: pointer;
   transition: 0.2s;
@@ -580,11 +696,19 @@ body .wrap .buttons div {
 @media all and (max-width: 1600px) {
   body .wrap .buttons div {
     width: 80px;
+    height: 80px;
   }
 }
 @media all and (max-width: 1240px) {
   body .wrap .buttons div {
     width: 70px;
+    height: 70px;
+  }
+}
+@media all and (max-width: 768px) {
+  body .wrap .buttons div {
+    width: 60px;
+    height: 60px;
   }
 }
 body .wrap .buttons div a {
@@ -606,30 +730,30 @@ body .wrap .buttons div:hover {
   transform: translateY(-5%);
 }
 body .wrap .buttons .YT {
-  background: url(../img/img/YT.png) no-repeat center/contain;
+  background: url(../img/img/YT.webp) no-repeat center/contain;
 }
 body .wrap .buttons .YT:hover {
-  background-image: url(../img/img/YT_h.png);
+  background-image: url(../img/img/YT_h.webp);
 }
 body .wrap .buttons .twitter {
-  background: url(../img/img/X.png) no-repeat center/contain;
+  background: url(../img/img/X.webp) no-repeat center/contain;
 }
 body .wrap .buttons .twitter:hover {
-  background-image: url(../img/img/X_h.png);
+  background-image: url(../img/img/X_h.webp);
 }
 body .wrap .buttons .TW {
-  background: url(../img/img/TW.png) no-repeat center/contain;
+  background: url(../img/img/TW.webp) no-repeat center/contain;
   display: none;
 }
 body .wrap .buttons .TW:hover {
-  background-image: url(../img/img/TW_h.png);
+  background-image: url(../img/img/TW_h.webp);
 }
 body .wrap .buttons .DC {
-  background: url(../img/img/DC.png) no-repeat center/contain;
+  background: url(../img/img/DC.webp) no-repeat center/contain;
   display: none;
 }
 body .wrap .buttons .DC:hover {
-  background-image: url(../img/img/DC_h.png);
+  background-image: url(../img/img/DC_h.webp);
 }
 body .wrap .lock {
   position: absolute;
@@ -646,16 +770,31 @@ body .wrap .lock::after {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  width: 282px;
-  height: 374px;
-  background: url(../img/img/lock.png) no-repeat center/contain;
+  width: 10vw;
+  height: 100%;
+  background: url(../img/img/lock.webp) no-repeat center/contain;
+}
+@media all and (max-width: 1600px) {
+  body .wrap .lock::after {
+    width: 13vw;
+  }
+}
+@media all and (max-width: 960px) {
+  body .wrap .lock::after {
+    width: 18vw;
+  }
+}
+@media all and (max-width: 768px) {
+  body .wrap .lock::after {
+    width: 30vw;
+  }
 }
 body .wrap .p_btns_m {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 25vw;
-  background: url(../img/img/menuM.png) no-repeat center bottom/contain;
+  background: url(../img/img/menuM.webp) no-repeat center bottom/contain;
   display: none;
   justify-content: space-evenly;
   align-items: end;
@@ -670,25 +809,25 @@ body .wrap .p_btns_m div {
   margin-bottom: 6%;
   width: 15%;
   height: 15vw;
-  background: url(../img/img/pM_M.png) no-repeat center/contain;
+  background: url(../img/img/pM_M.webp) no-repeat center/contain;
   filter: drop-shadow(0 7px 10px #351F0F);
 }
 body .wrap .p_btns_m .page_fish_m {
   margin-bottom: 3%;
-  background-image: url(../img/img/pF_m.png);
+  background-image: url(../img/img/pF_m.webp);
 }
 body .wrap .p_btns_m .page_index_m {
   width: 28%;
   margin-bottom: 0px;
-  background: url(../img/img/index_m.png) no-repeat center top/cover;
+  background: url(../img/img/index_m.webp) no-repeat center top/cover;
 }
 body .wrap .p_btns_m .page_ceresa_m {
   margin-bottom: 3%;
-  background-image: url(../img/img/pC_m.png);
+  background-image: url(../img/img/pC_m.webp);
 }
 body .wrap .p_btns_m .page_fox_m {
   margin-bottom: 6%;
-  background-image: url(../img/img/pFox_m.png);
+  background-image: url(../img/img/pFox_m.webp);
 }
 body .transform {
   position: absolute;
@@ -703,7 +842,7 @@ body .transform div {
   position: absolute;
   width: 15%;
   height: 100%;
-  background: url(../img/img/screen.png) no-repeat left/cover;
+  background: url(../img/img/screen.webp) no-repeat left/cover;
   transition: 0.8s;
 }
 body .transform .screenL {
@@ -789,7 +928,7 @@ body .pop .pop_frame .corner div {
   position: absolute;
   width: 70px;
   height: 70px;
-  background: url(../img/img/pop_corner.png) no-repeat center/contain;
+  background: url(../img/img/pop_corner.webp) no-repeat center/contain;
 }
 @media all and (max-width: 1240px) {
   body .pop .pop_frame .corner div {
@@ -840,7 +979,7 @@ body .pop .pop_frame .pop_line {
   margin: 20px 0;
   width: 100%;
   min-height: 12px;
-  background: url(../img/img/popLine.png) no-repeat center/contain;
+  background: url(../img/img/popLine.webp) no-repeat center/contain;
 }
 body .pop .pop_frame .pop_text {
   width: 100%;

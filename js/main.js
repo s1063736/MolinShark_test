@@ -4,7 +4,7 @@ let bgmplayer = $('audio')[0]
 $(".BGMbtn").on("click", function () {
     if (bgm == 0) {
         $(".BGMbtn").css(
-            "background-image", "url(img/img/bgmOff.png)"
+            "background-image", "url(img/img/bgmOff.webp)"
         )
         bgmplayer.pause()
         $(".BGMbtn").css(
@@ -13,7 +13,7 @@ $(".BGMbtn").on("click", function () {
         bgm = 1
     } else {
         $(".BGMbtn").css(
-            "background-image", "url(img/img/bgmOn.png)"
+            "background-image", "url(img/img/bgmOn.webp)"
         )
         bgmplayer.play()
         $(".BGMbtn").css(
@@ -66,7 +66,7 @@ $("#pindex,.page_index_m").on("click", function () {
 
         setTimeout(() => {
             $('.page_BG').css(
-                "background-image", "url(img/img/BGindex.png)"
+                "background-image", "url(img/img/BGindex.webp)"
             )
             $('.BG_mask').css(
                 "background-color", "#ddcdb6"
@@ -87,16 +87,32 @@ $("#pindex,.page_index_m").on("click", function () {
                 })
             }
 
+            //換上幕
             if ($(window).width() > 768) {
                 $('.pv,.p0_text').fadeIn(100)
                 $('.wood').css(
-                    "background-image", "url(img/img/header.png)"
+                    "background-image", "url(img/img/header.webp)"
                 )
             } else {
                 $('.p0_text').fadeIn(100)
             }
 
             $('.lock,.personal,.character').hide()
+
+            //社群按鈕位移
+            if ($(window).width() <= 768) {
+                $('.buttons').css({
+                    'flex-direction': 'row',
+                    'transform': 'translateX(-50%)translateY(150%)',
+                    'left':'50%',
+                    'bottom':'50vh',
+                    'right':'unset',
+                    'top':'unset'
+                })
+                $('.buttons > div').css({
+                    'margin':'0 2px'
+                })
+            }
 
         }, 900);
 
@@ -179,7 +195,7 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
 
     if ($(window).width() > 768) {
         $('.wood').css(
-            "background-image", "url(img/img/header1-1.png)"
+            "background-image", "url(img/img/header1-1.webp)"
         )
     }
     setTimeout(() => {
@@ -188,21 +204,36 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
         $(".character").show()
         $('.personal').css('display', 'flex')
 
+        //社群按鈕位移
+        if ($(window).width() <= 768) {
+            $('.buttons').css({
+                'flex-direction': 'column',
+                'transform': 'translateX(0%)translateY(0%)',
+                'left':'unset',
+                'bottom':'unset',
+                'right':'5vw',
+                'top':'30vw'
+            })
+            $('.buttons > div').css({
+                'margin':'2px 0'
+            })
+        }
+
         switch (page) {
             case 1:
                 $('.lock').hide()
                 $('.page_BG').css(
-                    "background-image", "url(img/img/BGmox.png)"
+                    "background-image", "url(img/img/BGmox.webp)"
                 )
                 $('.BG_mask').css(
                     "background-color", "#ddcdb6"
                 )
                 $('.role').css({
-                    'width': 'calc(' + $('.role').height() + 'px * 2.46)',
-                    "background-image": "url(img/img/name_Mox.png)"
+                    'width': 'calc('+ $('.name').height() +'px * 2.46)',
+                    "background-image": "url(img/img/name_Mox.webp)"
                 })
                 $('.character').css(
-                    "background-image", "url(img/img/mox.png)"
+                    "background-image", "url(img/img/mox.webp)"
                 )
                 $('.slogan').html(`「誒？這裡是哪裡？<br/>不會吧……我、我變成兔子王子了？！」`)
                 $('.personal_info').html(`在一個叫做路納多利姆的大陸上，裏頭充斥著魔幻與奇幻的世界，在同一個世界卻有著人神獸不同種族的存在，而在另外一個位面上，也有著蘊含豐富精神力的靈界&nbsp;`)
@@ -216,23 +247,23 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
             case 2:
                 $('.lock').show()
                 $('.page_BG').css(
-                    "background-image", "url(img/img/BGfish.jpg)"
+                    "background-image", "url(img/img/BGfish.webp)"
                 )
                 $('.BG_mask').css(
                     "background-color", "#cce1f7"
                 )
                 $('.role').css({
-                    'width': 'calc(' + $('.role').height() + 'px * 2.46)',
-                    "background-image": "url(img/img/name_who.png)"
+                    'width': 'calc('+ $('.name').height() +'px * 2.46)',
+                    "background-image": "url(img/img/name_who.webp)"
                 })
                 //亮名
                 // $('.role').css({
-                //     "background-image": "url(img/img/name_fish.png)",
-                //     'width': 'calc(' + $('.role').height() + 'px * 3.61)'
+                //     "background-image": "url(img/img/name_fish.webp)",
+                //     'width': 'calc('+ $('.name').height() +'px * 3.61)'
                 // })
 
                 $('.character').css(
-                    "background-image", "url(img/img/fishBlack.png)"
+                    "background-image", "url(img/img/fishBlack.webp)"
                 )
                 $('.slogan').html(`「■■■■■■■■■■<br/>■■■■■■■■■■■■■■」`)
                 $('.personal_info').html(`■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■&nbsp;`)
@@ -246,24 +277,24 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
             case 3:
                 $('.lock').show()
                 $('.page_BG').css(
-                    "background-image", "url(img/img/BGceresa.jpg)"
+                    "background-image", "url(img/img/BGceresa.webp)"
                 )
                 $('.BG_mask').css(
                     "background-color", "#ddb6b6"
                 )
 
                 $('.role').css({
-                    'width': 'calc(' + $('.role').height() + 'px * 2.46)',
-                    "background-image": "url(img/img/name_who.png)"
+                    'width': 'calc('+ $('.name').height() +'px * 2.46)',
+                    "background-image": "url(img/img/name_who.webp)"
                 })
                 //亮名
                 // $('.role').css({
-                //     "background-image": "url(img/img/name_ceresa.png)",
-                //     'width': 'calc(' + $('.role').height() + 'px * 3)'
+                //     "background-image": "url(img/img/name_ceresa.webp)",
+                //     'width': 'calc('+ $('.name').height() +'px * 3)'
                 // })
 
                 $('.character').css(
-                    "background-image", "url(img/img/fishBlack.png)"
+                    "background-image", "url(img/img/fishBlack.webp)"
                 )
                 $('.slogan').html(`「■■■■■■■■■■<br/>■■■■■■■■■■■■■■」`)
                 $('.personal_info').html(`■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■&nbsp;`)
@@ -277,25 +308,25 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
             case 4:
                 $('.lock').show()
                 $('.page_BG').css(
-                    "background-image", "url(img/img/BGfox.jpg)"
+                    "background-image", "url(img/img/BGfox.webp)"
                 )
                 $('.BG_mask').css(
                     "background-color", "#fff7fb"
                 )
 
                 $('.role').css({
-                    'width': 'calc(' + $('.role').height() + 'px * 2.46)',
-                    "background-image": "url(img/img/name_who.png)"
+                    'width': 'calc('+ $('.name').height() +'px * 2.46)',
+                    "background-image": "url(img/img/name_who.webp)"
                 })
 
                 //亮名
                 // $('.role').css({
-                //     'width': 'calc(' + $('.name').height() + 'px * 3.15)',
-                //     "background-image": "url(img/img/name_fox.png)",
+                //     'width': 'calc('+ $('.name').height() +'px * 3.15)',
+                //     "background-image": "url(img/img/name_fox.webp)",
                 // })
 
                 $('.character').css(
-                    "background-image", "url(img/img/fishBlack.png)"
+                    "background-image", "url(img/img/fishBlack.webp)"
                 )
                 $('.slogan').html(`「■■■■■■■■■■<br/>■■■■■■■■■■■■■■」`)
                 $('.personal_info').html(`■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■&nbsp;`)
