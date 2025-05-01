@@ -49,6 +49,8 @@ $("#pindex,.page_index_m").on("click", function () {
         $('.buttons .YT a').attr("href", 'https://www.youtube.com/@SHARKMOLIN')
         $('.buttons .twitter a').attr("href", 'https://x.com/MolinShark')
 
+        $(".character > div").css('transform', 'perspective(500px)rotateX(90deg)')
+
         //簾子關
         if ($(window).width() > 768) {
             $(".screenR,.screenL").css({
@@ -97,20 +99,20 @@ $("#pindex,.page_index_m").on("click", function () {
                 $('.p0_text').fadeIn(100)
             }
 
-            $('.lock,.personal,.character').hide()
+            $('.lock,.personal').hide()
 
             //社群按鈕位移
             if ($(window).width() <= 768) {
                 $('.buttons').css({
                     'flex-direction': 'row',
                     'transform': 'translateX(-50%)translateY(150%)',
-                    'left':'50%',
-                    'bottom':'50vh',
-                    'right':'unset',
-                    'top':'unset'
+                    'left': '50%',
+                    'bottom': '50vh',
+                    'right': 'unset',
+                    'top': 'unset'
                 })
                 $('.buttons > div').css({
-                    'margin':'0 2px'
+                    'margin': '0 2px'
                 })
             }
 
@@ -143,18 +145,34 @@ $("#pindex,.page_index_m").on("click", function () {
 //Mox頁
 $(".page_mox,.page_mox_m").on("click", function () {
     page = 1
+    $(".character > div").css('transform', 'perspective(500px)rotateX(90deg)')
+    setTimeout(() => {
+        $(".c1").css('transform', 'perspective(500px)rotateX(0deg)')
+    }, 1000);
 })
 //魚頁
 $(".page_fish,.page_fish_m").on("click", function () {
     page = 2
+    $(".character > div").css('transform', 'perspective(500px)rotateX(90deg)')
+    setTimeout(() => {
+        $(".c2").css('transform', 'perspective(500px)rotateX(0deg)')
+    }, 1000);
 })
 //莎莎頁
 $(".page_ceresa,.page_ceresa_m").on("click", function () {
     page = 3
+    $(".character > div").css('transform', 'perspective(500px)rotateX(90deg)')
+    setTimeout(() => {
+        $(".c3").css('transform', 'perspective(500px)rotateX(0deg)')
+    }, 1000);
 })
 //狐狸頁
 $(".page_fox,.page_fox_m").on("click", function () {
     page = 4
+    $(".character > div").css('transform', 'perspective(500px)rotateX(90deg)')
+    setTimeout(() => {
+        $(".c4").css('transform', 'perspective(500px)rotateX(0deg)')
+    }, 1000);
 })
 //點擊人物頁
 $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("click", function () {
@@ -201,7 +219,6 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
     setTimeout(() => {
         $('.buttons .TW,.buttons .DC').fadeIn(500)
         $('.p0_text').fadeOut(100)
-        $(".character").show()
         $('.personal').css('display', 'flex')
 
         //社群按鈕位移
@@ -209,13 +226,13 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
             $('.buttons').css({
                 'flex-direction': 'column',
                 'transform': 'translateX(0%)translateY(0%)',
-                'left':'unset',
-                'bottom':'unset',
-                'right':'5vw',
-                'top':'30vw'
+                'left': 'unset',
+                'bottom': 'unset',
+                'right': '5vw',
+                'top': '30vw'
             })
             $('.buttons > div').css({
-                'margin':'2px 0'
+                'margin': '2px 0'
             })
         }
 
@@ -229,14 +246,12 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
                     "background-color", "#ddcdb6"
                 )
                 $('.role').css({
-                    'width': 'calc('+ $('.name').height() +'px * 2.46)',
+                    'width': 'calc(' + $('.name').height() + 'px * 2.46)',
                     "background-image": "url(img/img/name_Mox.webp)"
                 })
-                $('.character').css(
-                    "background-image", "url(img/img/mox.webp)"
-                )
                 $('.slogan').html(`「誒？這裡是哪裡？<br/>不會吧……我、我變成兔子王子了？！」`)
-                $('.personal_info').html(`在一個叫做路納多利姆的大陸上，裏頭充斥著魔幻與奇幻的世界，在同一個世界卻有著人神獸不同種族的存在，而在另外一個位面上，也有著蘊含豐富精神力的靈界&nbsp;`)
+                $('.personal_info').html(`自詡為天才的高中少女，擁有過人的發明才能與無限的好奇心。某日，她親手製作了一台「異世界穿越裝置」，原本只是想和朋友們進行一場刺激的冒險&nbsp;`)
+
 
                 $('.buttons .YT a').attr("href", 'https://www.youtube.com/@mox-vfucker')
                 $('.buttons .twitter a').attr("href", 'https://x.com/MOX_Vfucker')
@@ -253,18 +268,16 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
                     "background-color", "#cce1f7"
                 )
                 $('.role').css({
-                    'width': 'calc('+ $('.name').height() +'px * 2.46)',
+                    'width': 'calc(' + $('.name').height() + 'px * 2.46)',
                     "background-image": "url(img/img/name_who.webp)"
                 })
+
                 //亮名
                 // $('.role').css({
                 //     "background-image": "url(img/img/name_fish.webp)",
                 //     'width': 'calc('+ $('.name').height() +'px * 3.61)'
                 // })
 
-                $('.character').css(
-                    "background-image", "url(img/img/fishBlack.webp)"
-                )
                 $('.slogan').html(`「■■■■■■■■■■<br/>■■■■■■■■■■■■■■」`)
                 $('.personal_info').html(`■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■&nbsp;`)
 
@@ -284,7 +297,7 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
                 )
 
                 $('.role').css({
-                    'width': 'calc('+ $('.name').height() +'px * 2.46)',
+                    'width': 'calc(' + $('.name').height() + 'px * 2.46)',
                     "background-image": "url(img/img/name_who.webp)"
                 })
                 //亮名
@@ -293,9 +306,6 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
                 //     'width': 'calc('+ $('.name').height() +'px * 3)'
                 // })
 
-                $('.character').css(
-                    "background-image", "url(img/img/fishBlack.webp)"
-                )
                 $('.slogan').html(`「■■■■■■■■■■<br/>■■■■■■■■■■■■■■」`)
                 $('.personal_info').html(`■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■&nbsp;`)
 
@@ -315,7 +325,7 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
                 )
 
                 $('.role').css({
-                    'width': 'calc('+ $('.name').height() +'px * 2.46)',
+                    'width': 'calc(' + $('.name').height() + 'px * 2.46)',
                     "background-image": "url(img/img/name_who.webp)"
                 })
 
@@ -325,9 +335,6 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
                 //     "background-image": "url(img/img/name_fox.webp)",
                 // })
 
-                $('.character').css(
-                    "background-image", "url(img/img/fishBlack.webp)"
-                )
                 $('.slogan').html(`「■■■■■■■■■■<br/>■■■■■■■■■■■■■■」`)
                 $('.personal_info').html(`■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■&nbsp;`)
 
@@ -341,6 +348,7 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
             default:
                 break;
         }
+
     }, 900);
 
     //簾子開
@@ -355,6 +363,8 @@ $('.page_btns > div,.page_mox_m,.page_fish_m,.page_ceresa_m,.page_fox_m').on("cl
                 "transform": "translateX(-50%)",
                 "width": "15%"
             })
+
+            $(".character").css('transform', 'perspective(500px)rotateX(0deg)')
         } else {
             $(".screenL").css({
                 "transform": "translateX(-50%)",
@@ -382,7 +392,9 @@ $('.personal_info').on('click', function () {
 
     switch (page) {
         case 1:
-            $('.pop_text').html(`沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案沒有文案<br><br>`)
+            $('.pop_text').html(`自詡為天才的高中少女，擁有過人的發明才能與無限的好奇心。某日，她親手製作了一台「異世界穿越裝置」，原本只是想和朋友們進行一場刺激的冒險，卻在啟動後意外發生了靈魂交換，來到異世界並成為了一位有著兔耳與王族血統的少年王子。<br>
+            與友人失散後，她必須一邊隱瞞自己的真正身份。<br>
+            表面上冷靜自負，內心卻藏著對夥伴深厚的思念，以及面對未知世界時無法隱藏的悸動。<br><br>`)
             break;
 
         case 2:
